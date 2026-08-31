@@ -1,0 +1,1 @@
+import{r as e}from"./useRouter-B64lGpJS.js";import{t}from"./conversation-view-NmoyOIMz.js";import{n}from"./index-BleGRrff.js";var r=e();function i(){let{conversationId:e}=n.useParams();return(0,r.jsx)(t,{conversationId:e})}export{i as component};

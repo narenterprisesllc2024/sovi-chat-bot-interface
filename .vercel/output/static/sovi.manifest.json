@@ -1,0 +1,8 @@
+{
+  "name": "Sovi",
+  "frontendVersion": "0.1.0",
+  "schemaVersion": "1.0.0",
+  "capabilityContractVersion": "1.0.0",
+  "eventProtocolVersion": "1.0.0",
+  "healthCheck": "/api/sovi/status"
+}

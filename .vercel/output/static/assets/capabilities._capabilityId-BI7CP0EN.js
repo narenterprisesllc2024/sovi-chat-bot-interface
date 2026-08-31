@@ -1,0 +1,1 @@
+import{r as e}from"./useRouter-B64lGpJS.js";import{t}from"./index-BleGRrff.js";import{a as n}from"./pages-DSaPhMz-.js";var r=e();function i(){let{capabilityId:e}=t.useParams();return(0,r.jsx)(n,{capabilityId:e})}export{i as component};

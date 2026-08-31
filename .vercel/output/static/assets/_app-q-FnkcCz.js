@@ -1,0 +1,1 @@
+import{r as e}from"./useRouter-B64lGpJS.js";import{t}from"./conversation-view-NmoyOIMz.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as component};

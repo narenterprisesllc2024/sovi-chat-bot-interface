@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8080/login",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Sovi",
+      "hasCanvas": false,
+      "bodyTextLen": 218,
+      "bodyTextHash": "c2ec1466ea4d62ed3a0af552850038c7fd937b8ea752db30bd0564d17591efc5",
+      "bodyTextPrefix": "Your personal AI operating system. Continue with GoogleContinue ",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <MatchView router={{...}} match={{id:\"/login...\", ...}}>\n      <SafeFragment>\n        <SafeFragment fallback={null}>\n          <CatchBoundary getResetKey={function getResetKey} errorComponent={function AppErrorComponent} ...>\n            <SafeFragment fallback={function fallback}>\n              <MatchInnerImpl match={{id:\"/login...\", ...}}>\n                <Lazy>\n                  <Login>\n                    <main className=\"relative g...\">\n                      <div>\n                      <div className=\"relative w...\">\n                        <header>\n                        <div>\n                        <div>\n                        <form className=\"space-y-3\" onSubmit={function onSubmit}>\n                          <div className=\"space-y-1\">\n                            <Label>\n                            <_c id=\"email\" type=\"email\" autoComplete=\"username\" required={true} value=\"\" ...>\n                              <input\n                                type=\"email\"\n                                ref={null}\n                                className=\"flex h-10 w-full rounded-lg border border-input bg-card px-3 text-sm shadow...\"\n                                id=\"email\"\n                                autoComplete=\"username\"\n                                required={true}\n                                value=\"\"\n                                onChange={function onChange}\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                          <div className=\"space-y-1\">\n                            <Label>\n                            <_c id=\"password\" type=\"password\" autoComplete=\"current-pa...\" required={true} minLength={8} ...>\n                              <input\n                                type=\"password\"\n                                ref={null}\n                                className=\"flex h-10 w-full rounded-lg border border-input bg-card px-3 text-sm shadow...\"\n                                id=\"password\"\n                                autoComplete=\"current-password\"\n                                required={true}\n                                minLength={8}\n                                value=\"\"\n                                onChange={function onChange}\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                          ...\n                        ...\n"
+      ],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/login.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Sovi",
+      "hasCanvas": false,
+      "bodyTextLen": 218,
+      "bodyTextHash": "c2ec1466ea4d62ed3a0af552850038c7fd937b8ea752db30bd0564d17591efc5",
+      "bodyTextPrefix": "Your personal AI operating system. Continue with GoogleContinue ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/login-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/login.json"
+}

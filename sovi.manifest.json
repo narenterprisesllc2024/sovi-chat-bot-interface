@@ -1,0 +1,100 @@
+{
+  "name": "Sovi",
+  "application": "sovi-unified-interface",
+  "description": "Adaptive cockpit for a personal AI operating system. Talk to Sovi; routing, models, agents, and tools sit underneath.",
+  "frontendVersion": "0.1.0",
+  "schemaVersion": "1.0.0",
+  "capabilityContractVersion": "1.0.0",
+  "eventProtocolVersion": "1.0.0",
+  "adapterVersion": "1.0.0",
+  "stack": {
+    "framework": "TanStack Start",
+    "ui": "React 19 + Tailwind CSS v4 + Radix",
+    "language": "TypeScript"
+  },
+  "adapterLocations": {
+    "contract": "src/lib/sovi/adapter.ts",
+    "mock": "src/lib/sovi/adapters/mock.ts",
+    "hybrid": "src/lib/sovi/adapters/hybrid.ts",
+    "client": "src/lib/sovi/store.ts",
+    "types": "src/lib/sovi/types.ts",
+    "catalog": "src/lib/sovi/catalog.ts",
+    "events": "src/lib/sovi/events.ts",
+    "flags": "src/lib/sovi/flags.ts"
+  },
+  "integrationEntryPoints": [
+    "src/lib/sovi/adapter.ts",
+    "src/lib/sovi/adapters/hybrid.ts",
+    "src/routes/api/sovi/chat.ts",
+    "src/routes/api/sovi/image.ts",
+    "src/routes/api/sovi/tts.ts",
+    "src/routes/api/sovi/status.ts"
+  ],
+  "supportedCapabilityCategories": [
+    "chat", "research", "web", "coding", "software", "image", "image-edit",
+    "video", "audio", "speech", "stt", "files", "documents", "agents",
+    "workflows", "automations", "memory", "knowledge", "apis", "mcp",
+    "computer-use", "business", "personal", "simulation", "physical", "unknown"
+  ],
+  "requiredServices": ["conversation.stream"],
+  "optionalServices": [
+    "images", "imageEditing", "video", "audio", "voice", "agents",
+    "workflows", "automations", "memory", "computerUse", "physicalSystems"
+  ],
+  "environmentVariables": {
+    "XAI_API_KEY": {
+      "required": false,
+      "where": "server",
+      "purpose": "Optional gateway used by the hybrid adapter for chat, images, and TTS. Never expose to the client."
+    }
+  },
+  "featureModules": [
+    "chat", "voice", "projects", "agents", "artifacts", "memory",
+    "media", "automations", "capabilities", "system", "design-lab", "identity"
+  ],
+  "development": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "typecheck": "npm run typecheck"
+  },
+  "deployment": {
+    "target": "Vercel via platform build",
+    "listen": "0.0.0.0:8080 in development",
+    "pwa": true
+  },
+  "authentication": {
+    "assumption": "The hosted cockpit requires sign-in so a public URL cannot spend gateway usage. Google, X, and email/password. When the real Sovi OS already has a session, map it and retire this gate — do not run two identity systems.",
+    "methods": ["google", "x", "email-password"],
+    "gate": {
+      "ui": "src/components/sovi/require-auth.tsx",
+      "api": "src/lib/sovi/server/require-session.server.ts",
+      "login": "src/routes/login.tsx"
+    },
+    "clientResponsibilities": ["session cookie / preview bearer", "never store provider secrets"],
+    "serverResponsibilities": ["session verification", "capability authorization", "secret handling"]
+  },
+  "identity": {
+    "mark": "horizon + rising point (not an orb)",
+    "changeable": "System → Identity",
+    "variants": ["dawn", "horizon", "crest", "custom"],
+    "assets": ["public/brand/sovi-crest.jpg", "public/brand/sovi-mark.svg", "public/favicon.svg"]
+  },
+  "healthCheck": {
+    "http": "GET /api/sovi/status",
+    "ui": "System view"
+  },
+  "extensibilityPoints": [
+    "Capability registry + generic renderer",
+    "SoviAdapter interface",
+    "Event protocol",
+    "Capability UI metadata (icon, renderer, nav)",
+    "Feature flags derived from discovery",
+    "Identity / mark"
+  ],
+  "handoff": {
+    "readme": "README.md",
+    "integrator": "docs/SOVI-INTEGRATOR-INSTRUCTIONS.md",
+    "docs": "docs/"
+  }
+}

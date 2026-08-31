@@ -1,0 +1,29 @@
+{
+  "$id": "https://sovi.local/schemas/capability.schema.json",
+  "title": "SoviCapability",
+  "type": "object",
+  "required": ["id", "name", "description", "category", "type", "enabled", "available", "status"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "category": { "type": "string" },
+    "type": { "type": "string" },
+    "enabled": { "type": "boolean" },
+    "available": { "type": "boolean" },
+    "status": {
+      "enum": ["available", "unavailable", "disabled", "degraded", "unknown", "discovering", "error"]
+    },
+    "inputSchema": { "type": "object" },
+    "outputSchema": { "type": "object" },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "icon": { "type": "string" },
+        "renderer": { "enum": ["generic", "enhanced", "native"] },
+        "nav": { "type": "boolean" }
+      }
+    }
+  }
+}
